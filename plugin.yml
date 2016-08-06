@@ -1,0 +1,20 @@
+name: SpeedUHC
+author: SwiftLee
+version: 1.0
+main: org.royalmc.uhc.UHCMain
+description: The SpeedUHC plugin for RoyalMC!
+
+load: STARTUP
+
+commands:
+    Hub:
+        usage: /<command>
+        aliases: [lobby]
+    Scenario:
+        usage: /<command>
+        aliases: [sc, scen]
+    AddChestItem:
+       usage: /<command>
+       aliases: [aci]
+    Stats:
+      usage: /<command>

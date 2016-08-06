@@ -1,0 +1,509 @@
+#Minimum players required to start the match
+minimumPlayers: 2
+
+#How many seconds to wait for before starting the match if there's enough players
+lobbyTimeLimit: 60
+
+#The lobby server
+hubName: "lobby"
+
+#The server this plugin is running on
+serverName: "minigame"
+
+#This is all done in ticks!
+#MAKE SURE colorPrefix MATCHES THE & COLOR CODE IN THE HUBADDRESS!
+ipAnim:
+     color: "&6"
+     colorPrefix: "&8" 
+
+titleAnim:
+     color1: "&e&l"
+     color2: "&b&l"
+     color3: "&c&l"
+     color4: "&d&l"
+     color5: "&a&l"
+     title: "UHC Dash"
+     colorPrefix: "&6&l"
+
+leaveGameItemSlot: 8
+leaveGameItem:
+     name: "&c&lExit Lobby"
+     lore:
+     - "&aUse this item to return"
+     - "&ato the &emain server&a."
+gameModeItemSlot: 0
+gameModeItem:
+     type: "BLAZE_POWDER"
+     name: "&a&lGame Modes"
+     lore:
+     - "&aClick this to vote for"
+     - "&athe game mode you"
+     - "&awould like!"
+     - ""
+voteMessage: "&a{player} has voted for {gamemode}! &e+1"
+votesNeeded: 2
+gameModeSelected: "&aThe game mode voted for was:&e {gamemode}"
+
+permissions: 
+     gameModeSelector:
+          description: "Allows player to use inventory item in lobby to select different game modes."
+          default: "op"
+diamondlessSlot: 11
+diamondlessItem: "DIAMOND"
+diamondless:
+     lore:
+     - "&aClick to vote for Diamondless game mode!"
+     - "&aRemoves all diamonds from mining!"
+     - "&eKill players for 1 diamond!"
+     - "&aVotes: {amount}"
+     nameColor: "&b&l"
+goldlessSlot: 13
+goldlessItem: "GOLD_INGOT"
+goldless:
+     lore:
+     - "&aClick to vote for Goldless game mode!"
+     - "&eKilling 1 player gives 2 golden apples!"
+     - ""
+     - "&aVotes: {amount}"
+     nameColor: "&e&l"
+horselessSlot: 15
+horselessItem: "SADDLE"
+horseless:
+     lore:
+     - "&aClick to vote for Horseless game mode!"
+     - "&aHorses are untameable!"
+     - ""
+     - "&aVotes: {amount}"
+     nameColor: "&6&l"
+rodlessSlot: 29
+rodlessItem: "FISHING_ROD"
+rodless:
+     lore: 
+     - "&aClick to vote for Rodless game mode!"
+     - "&eRemoves craftablility of fishing rods!"
+     - ""
+     - "&aVotes: {amount}"
+     nameColor: "&6&l"
+noneSlot: 33
+noneItem: "BARRIER"
+none:
+     lore:
+     - "&aClick to vote for None game mode!"
+     - "&eDoes not change anything in-game."
+     - ""
+     - "&aVotes: {amount}"
+     nameColor: "&c&l"
+doubleOresSlot: 31
+doubleOresItem: "COAL_ORE"
+doubleOres:
+     lore:
+     - "&aClick to vote for Double Ores game mode!"
+     - "&eDrops two ores instead of one!"
+     - ""
+     - "&aVotes: {amount}"
+     nameColor: "&3&l"
+removeVoteSlot: 49
+removeVoteItem: "REDSTONE_BLOCK"
+removeVote:
+     lore:
+     - "&cClick to remove your current vote!"
+     nameColor: "&4&l"
+gameModeInv: "&aGame Modes"
+
+#Where people get sent before the match starts
+preGameLocation:
+     world: "world_buffer"
+     x: 0
+     y: 64
+     z: 0
+     pitch: 10
+     yaw: 0
+#Lobby messages
+lobbyStartTimeChat: "&7 The game will start in {colorSwitch}{seconds}&7 seconds."
+lobbyStartTimeActionBar: "&7Starting in {colorSwitch}{seconds}&7 seconds."
+lobbyNeedPlayersMessage: "&4 Waiting for {count} more player{s}."
+lobbyCountdownColorSwitch:
+     threshold: 20
+     colorAboveThreshold: "&2"
+     colorBelowThreshold: "&9"
+#How many seconds until PvP is enabled
+pvpTimeLimit: 600
+
+#How many seconds until the deathmatch begins
+deathmatchTimeLimit: 1200
+
+#Golden Head
+heartsFromHead: 5
+absorptionFromHead: 1
+
+crystalsPerKill: 25
+crystals:
+     killMessage: "&aYou've received &3&l{amount} &acrystals!"
+
+coins:
+     endgame: 200
+     message: "&aYou've received &e&l{amount} &acoins!"
+
+#World borders: divide by 2 for your actual border
+#shrinkInterval will subtract  the amount/2 each time the border is ordered to shrink
+#shrinkTime is the time it takes for the border to reach borderSize - shrinkInterval
+#FOR ANY SIZE, DO THE ACTUAL SIZE YOU WANT MULTIPLIED BY 2!
+worldborders:
+     deathmatch:
+           length: 125
+           shrinkintervalDeathmatch: 3
+           shrinktime: 3
+     maingame:
+           length: 900
+     damage: 2.0
+     shrinkInterval: 225
+     shrinkTime: 10
+     deathmatchsize: 150
+     minsize: 75
+#Boots Customization
+specialBoots:
+     type: "CHAINMAIL_BOOTS"
+     name: "&5Power Boots"
+     lore:
+     - ""
+     - "&7Wearing these boots will"
+     - "&7give you super speed and"
+     - "&7prevent fall damage!"
+#More boots stuff
+bootSpeed: 1
+
+#Haste
+hasteSpeed: 1
+
+#Customizable Sounds
+sounds:
+     teleport: "ENDERMAN_TELEPORT"
+     lobbyCountdown: "CLICK"
+     deathmatchCountdown: "NOTE_BASS_DRUM"  
+healthAboveHeadColor: "&4"
+displayNameColor: "&e"
+
+spectatorCompass:
+     name: "&3Spectate Selector"
+     lore:
+     - "&aUse this item to list the"
+     - "&aavailable players to TP to."
+spectatorYLimit: 24
+spectatorYLimitMessage: "&cYou cannot go below Y-Level: &e{ylimit} &cfor possibility of cheating!"
+
+#Messages for /scenario command
+messageVotingNotOver: "&cThe voting process has not ended yet!"
+messageScenario: "&aThe current game mode is: {gamemode}"
+
+#SQL SETUP
+hostname: "localhost"
+port: "3306"
+databasename: "speeduhc"
+username: "speeduhc"
+password: "password"
+tablename: "SpeedUHCTable"
+
+#IF PLAYER TYPES /HUB 140 = 20 ticks * 7 seconds
+messageToHub: "&cIf you would like to return to hub, re-submit the command."
+hubCommandTimeout: 140
+
+#SOUND PLAYED TO KILLER WHEN ENEMY IS KILLED
+killSound: "SUCCESSFUL_HIT"
+#SOUND PLAYED TO ALL PLAYERS WHEN THERE IS A DEATH
+globalKillSound: "AMBIENCE_THUNDER"
+
+#THE TEXT THAT'S DISPLAYED TO THE WINNERS AT THE END OF THE GAME | TIMES ARE IN SECONDS
+winTitleText: "&aYou've Won!"
+winSubtitleText: "&7You had &9{kills}&7 kills."
+endGameTitle:
+     fadeIn: 0
+     stayTime: 60
+     fadeOut: 40
+#THE TITLE THAT COUNTS DOWN IN LOBBY BEFORE MATCH STARTS (IN TICKS)
+startMatchTitle:
+     fadeIn: 0
+     stayTime: 1
+     fadeOut: 0
+#WHAT THE PLAYER CHAT FORMATTING LOOKS LIKE
+globalChatFormat: "&f {sender}&8: &7{message}"
+
+#SOME OPTIONAL TEXT TO DISPLAY WHEN THE PLAYER ENTERS THE GAME LOBBY. SET IT TO "" TO DISABLE
+playerJoinedText: "&6[QuickUHC] &f{player} &ahas joined the game &6({onlineplayers}/{maxPlayers})"
+
+logBreakDelay: 4
+
+#THE RULES DISPLAYED BEFORE GAME-START
+#MORE RULES, MORE TIME TO COMPLETE RULE DISPLAY BEFORE GAME-START & VICE VERSA
+rules:
+- "Rule 1: Be safe!"
+- "Rule 2: No hacking!"
+- "Rule 3: Don't die!"
+- "Rule 4: Don't get stuck in crit chains!"
+- "Rule 5: Eat plenty of golden apples!"
+- "Rule 6: Kill everyone in the game!"
+
+#Delay between displaying tips (in seconds)
+tipsDelay: 60
+
+tips:
+- "&7[&eTip&7] &cKilling mobs automatically cooks the drops!"
+- "&7[&eTip&7] &cKilling a player while in regular UHC mode drops a golden head, which can heal 5 hearts and give Absorption II!"
+- "&7[&eTip&7] &cThere is no natural regeneration in UHC! Eat golden apples to regenerate health!"
+- "&7[&eTip&7] &cMining ores such as gold and iron returns a smelted ore!"
+- "&7[&eTip&7] &cThere are 25 different carepackages you can loot around the map!"
+- "&7[&eTip&7] &cBreaking down trees is done by hitting the bottom block of the tree!"
+- "&7[&eTip&7] &cWhen you kill someone, an armor stand will appear showing how they died!"
+- "&7[&eTip&7] &cThe Rodless game mode disables crafting of fishing rods!"
+- "&7[&eTip&7] &cThe Diamondless game mode removes mining diamonds! You have to kill a player to receive a diamond!"
+- "&7[&eTip&7] &cThe Goldless game mode removes mining gold! When you kill a player you get two golden heads!"
+- "&7[&eTip&7] &cThe Double Ores game mode makes mining basic ores such as iron and gold drop double the amount!"
+- "&7[&eTip&7] &cThe Horseless game mode removes the taming of horses!"
+- "&7[&eTip&7] &cKeep an eye out for shrinking borders on the scoreboard!"
+- "&7[&eTip&7] &cAs a spectator, you cannot travel deep into caves with players to prevent cheating!"
+
+prefix: "&e"
+
+deathMessageForHologram: "&l{victim} &r&fwas killed by &l{killer}&r&f!"
+deathMessageArrowForHologram: "&l{victim} &r&fwas shot by &l{shooter}&r&f!"
+
+scoreboard:
+             hubColor: "&7"
+             gameTimeColor: "&f"
+             playersLeftColor: "&f"
+             yourKillsColor: "&f"
+             spectatorsColor: "&f"
+             borderColor: "&f"
+lobby:
+         playersOnlineColor: "&f"
+         playersToStartColor: "&f"
+         countdownColor: "&f"
+         serverColor: "&f"
+
+#DEATH MESSAGES
+deathMessages:
+     PLAYER:
+     - "{victim}&c was killed by &f{killer}&c with &4{killerHealth}&c HP remaining!"
+     SUICIDE:
+     - "{victim}&c has committed suicide."
+     - "{victim}&c took their own life."
+#Meme- "{victim}&c accidentally theirself."
+#Meme- "{victim}&c has become an hero!"
+#Use default msg    BLOCK_EXPLOSION: []
+     CONTACT:
+     - "{victim}&c hugged the prickly plant."
+     - "{victim}&c was murdered by an evil cactus!"
+     DROWNING:
+     - "{victim}&c forgot how to swim."
+     - "{victim}&c failed to realize they aren't a fish."
+     - "{victim}&c attempted to breathe water and failed."
+     - "{victim}&c drowned in the wet stuff."
+#Should be handled by mob names     ENTITY_EXPLOSION: []
+     FALL:
+     - "{victim}&c fell to their death."
+     - "{victim}&c went splat on the ground."
+     - "{victim}&c forgot their parachute..."
+     FALLING_BLOCK:
+     - "{victim}&c was killed by a vicious anvil!"
+     - "{victim}&c tried to catch an anvil."
+     FIRE:
+     - "{victim}&c burned to death!"
+     - "{victim}&c was incinerated!"
+     - "{victim}&c stood in a fire."
+     FIRE_TICK:
+     - "{victim}&c burned to death!"
+     - "{victim}&c was incinerated!"
+     - "{victim}&c forgot how to stop, drop, and roll."
+     LAVA:
+     - "{victim}&c became a sacrifice to the lava gods!"
+     - "{victim}&c stepped in teh lava like a newb."
+     LIGHTNING:
+     - "{victim}&c was electrocuted by lightning."
+     - "{victim}&c got wrecked by Thor."
+     - "{victim}&c was shot by Zeus."
+     MAGIC:
+     - "{victim}&c was killed by a potion."
+     POISON:
+     - "{victim}&c was somehow poisoned to death!"
+#Use default msg     PROJECTILE: []
+     STARVATION:
+     - "{victim}&c forgot to eat food!"
+     - "{victim}&c starved to death."
+     SUFFOCATION:
+     - "{victim}&c suffocated to death."
+     THORNS:
+     - "{victim}&c was killed by attacking some thorny armor."
+     VOID:
+     - "{victim}&c fell in teh dark hole."
+     - "{victim}&c was lost to the void."
+     - "{victim}&c faded into the darkness of the void."
+     WITHER_EFFECT:
+     - "{victim}&c withered away..."
+     - "{victim}&c was unable to survive the withering effect..."
+     ARROW:
+     - "{victim}&c was sniped by &f{shooter}&c with &4{shooterHealth}&c HP remaining!"
+     BLAZE:
+     - "{victim}&c was killed by a blaze!"
+     CAVE_SPIDER:
+     - "{victim}&c fell prey to a venomous cave spider!"
+     CREEPER:
+     - "{victim}&c received a powerful hug from a creeper!"
+     ENDER_CRYSTAL:
+     - "{victim}&c was blown up by an ender crystal!"
+     ENDER_DRAGON:
+     - "{victim}&c was destroyed by an ender dragon!"
+     ENDERMAN:
+     - "{victim}&c tried to stare-down an enderman..."
+     - "{victim}&c was slaughtered by an enderman!"
+     ENDERMITE:
+     - "{victim}&c was bitten to death by an endermite!"
+     FIREBALL:
+     - "{victim}&c got shot by a fireball!"
+     GHAST:
+     - "{victim}&c was killed by a ghast!"
+     GIANT:
+     - "{victim}&c got stomped on by a giant zombie!"
+     - "{victim}&c was squished by a giant zombie!"
+     - "{victim}&c became food for a titan!"
+     GUARDIAN:
+     - "{victim}&c was killed by a guardian!"
+     - "{victim}&c died to a spikey-fish."
+     IRON_GOLEM:
+     - "{victim}&c got smacked around by an iron golem!"
+     - "{victim}&c did not receive a rose from the metal monster!"
+     MAGMA_CUBE:
+     - "{victim}&c was killed by a magma slime."
+     MINECART_TNT:
+     - "{victim}&c was blasted to smithereens!"
+     - "{victim}&c was obliterated by a minecart carrying TNT!"
+     PIG_ZOMBIE:
+     - "{victim}&c angered the pig army!"
+     - "{victim}&c was no match for the zombie pigman!"
+     PRIMED_TNT:
+     - "{victim}&c was blasted to smithereens!"
+     - "{victim}&c was obliterated by TNT!"
+     RABBIT:
+     - "{victim}&c was brutally murdered by a ferocious bunny!"
+     SILVERFISH:
+     - "{victim}&c was killed by a silverfish."
+     SKELETON:
+     - "{victim}&c got shot to death by a skeleton!"
+     - "{victim}&c was killed by a spooky-scary skeleton!"
+     - "{victim}&c was sniped by a skeleton!"
+     SLIME:
+     - "{victim}&c was killed by a slime..."
+     SMALL_FIREBALL:
+     - "{victim}&c got shot by a fireball!"
+     SPIDER:
+     - "{victim}&c was entangled in a spider's web!"
+     - "{victim}&c was unable to kill it with fire!"
+     WITCH:
+     - "{victim}&c was murdered by a mean old witch."
+     WITHER_BOSS:
+     - "{victim}&c was destroyed by a Wither!"
+     WITHER_SKULL:
+     - "{victim}&c got blown up by a wither skull!"
+     WOLF:
+     - "{victim}&c became dog food!"
+     - "{victim}&c was no match for the hungry wolf!"
+     ZOMBIE:
+     - "{victim}&c was eaten alive by a zombie!"
+     - "{victim}&c was torn apart by the undead!"
+     - "{victim}&c forgot to wear their zombie-repellant..."
+
+guiNameColor: "&c&l"
+winsStat:
+     itemType: "DIAMOND"
+     nameColor: "&b&l"
+     itemSlot: 0
+lossesStat:
+     itemType: "COAL"
+     nameColor: "&b&l"
+     itemSlot: 2
+killsStat:
+     itemType: "DIAMOND_SWORD"
+     nameColor: "&b&l"
+     itemSlot: 4
+gamesPlayedStat:
+     itemType: "FEATHER"
+     nameColor: "&b&l"
+     itemSlot: 6
+damageDealtStat:
+     itemType: "BONE"
+     nameColor: "&b&l"
+     itemSlot: 8
+damageTakenStat:
+     itemType: "DIAMOND_CHESTPLATE"
+     nameColor: "&b&l"
+     itemSlot: 20
+fallDamageTakenStat:
+     itemType: "BAKED_POTATO"
+     nameColor: "&b&l"
+     itemSlot: 22
+arrowsShotStat:
+     itemType: "ARROW"
+     nameColor: "&b&l"
+     itemSlot: 24
+heartsHealedStat:
+     itemType: "GOLDEN_CARROT"
+     nameColor: "&b&l"
+     itemSlot: 28
+applesEatenStat:
+     itemType: "APPLE"
+     nameColor: "&b&l"
+     itemSlot: 30
+headsEatenStat:
+     itemType: "GOLDEN_APPLE"
+     nameColor: "&b&l"
+     itemSlot: 32
+entitiesTamedStat:
+     itemType: "LEASH"
+     nameColor: "&b&l"
+     itemSlot: 34
+nethersEnteredStat:
+     itemType: "NETHERRACK"
+     nameColor: "&b&l"
+     itemSlot: 45
+endsEnteredStat:
+     itemType: "ENDER_STONE"
+     nameColor: "&b&l"
+     itemSlot: 47
+blocksMinedStat:
+     itemType: "IRON_PICKAXE"
+     nameColor: "&b&l"
+     itemSlot: 49
+entitiesKilledStat:
+     itemType: "PORK"
+     nameColor: "&b&l"
+     itemSlot: 51
+kDRStat:
+     itemType: "QUARTZ_STAIRS"
+     nameColor: "&b&l"
+     itemSlot: 53
+
+ParticlesINV_Name: '&3UHC &5Vote &9Particles'
+Particle:
+  '1': 384
+  Slot_1_Name: '&8Slot_1_Name'
+  '2': 0
+  Slot_2_Name: '&8Slot_2_Name'
+  '3': 268
+  Slot_3_Name: '&8Slot_3_Name'
+  '4': 0
+  Slot_4_Name: '&8Slot_4_Name'
+  '5': 368
+  Slot_5_Name: '&8Slot_5_Name'
+  '6': 0
+  Slot_6_Name: '&8Slot_6_Name'
+  '7': 264
+  Slot_7_Name: '&8Slot_7_Name'
+  '8': 0
+  Slot_8_Name: '&8Slot_8_Name'
+  '9': 331
+  Slot_9_Name: '&4Revoke Your Selected Vote'
+
+achievements:
+     rewards:
+          swimmer: 50
+          fighter: 50
+          bowking: 50
+          walker: 50
